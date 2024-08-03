@@ -30,7 +30,7 @@ const InfluencerDisplay = () => {
     document.body.classList.add('overflow-y-hidden')
     client.getByUID('influencer', influencerParam)
       .then(res => setInfluencer(res.data))
-  }, [influencerParam])
+  }, [influencerParam, client])
 
   return influencerParam && (
     <article data-lenis-prevent className="fixed top-0 bottom-0 left-0 z-40 w-full px-4 py-16 overflow-y-scroll md:px-16 bg-secondary">
@@ -52,7 +52,7 @@ const InfluencerDisplay = () => {
               <PrismicRichText field={influencer.description} />
               <div className="grid grid-cols-2 mt-16">
                 {
-                  influencer.slices.map(slice => <SocialNetwork slice={slice} />)
+                  influencer.slices.map(slice => <SocialNetwork key={slice.id} slice={slice} />)
                 }
               </div>
             </div>

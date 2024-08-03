@@ -86,7 +86,7 @@ export default async function Home({ searchParams }) {
           <div className="flex flex-row w-full">
             {
               brands.data.slices.map(slice => (
-                <figure className="h-[4.5rem] w-auto mr-32 shrink-0">
+                <figure key={slice.id} className="h-[4.5rem] w-auto mr-32 shrink-0">
                   <PrismicNextImage alt="" className="object-contain w-full h-full" field={slice.primary.image} />
                 </figure>
               ))

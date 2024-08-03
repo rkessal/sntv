@@ -6,7 +6,7 @@ const FooterNav = ({slices, location}) => {
     <ul className="md:w-[10.5rem] mb-16 md:mb-0">
     {
       slices.map(slice => (
-        <li className="mb-6 last:mb-0">
+        <li key={slice.id} className="mb-6 last:mb-0">
           <PrismicNextLink target={slice.primary.new_tab ? '_blank': undefined} href={slice.primary.link}>
             <span>
               {slice.primary.label}

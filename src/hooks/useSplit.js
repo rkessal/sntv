@@ -1,5 +1,6 @@
+"use client"
 import { useGSAP } from '@gsap/react';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import SplitType from 'split-type';
 
 const useSplitType = (scope, selector, options = {}) => {

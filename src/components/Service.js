@@ -6,7 +6,7 @@ import { PrismicNextImage } from '@prismicio/next'
 import { PrismicRichText } from '@prismicio/react'
 import clsx from 'clsx'
 import { useSearchParams } from 'next/navigation'
-import React, { memo, useEffect, useRef } from 'react'
+import React, { memo, useCallback, useEffect, useRef } from 'react'
 import SectionTitle from './SectionTitle'
 
 const Services = ({slice}) => {
@@ -53,7 +53,7 @@ const Service = ({slice, currentService, index, setFirstService, firstCerviceRef
 
   useEffect(() => {
     if (index === 0) setFirstService(ref)
-  }, [])
+  }, [index, setFirstService])
   
   const handleLinkClick = (e) => {
     e.preventDefault();
