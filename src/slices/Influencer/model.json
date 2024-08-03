@@ -1,0 +1,29 @@
+{
+  "id": "influencer",
+  "type": "SharedSlice",
+  "name": "Influencer",
+  "description": "Influencer",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "influencer": {
+          "type": "Link",
+          "config": {
+            "label": "Influencer",
+            "select": "document",
+            "customtypes": [
+              "influencer"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

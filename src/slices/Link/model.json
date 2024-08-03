@@ -1,0 +1,42 @@
+{
+  "id": "link",
+  "type": "SharedSlice",
+  "name": "Link",
+  "description": "Link",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "link": {
+          "type": "Text",
+          "config": {
+            "label": "Link",
+            "placeholder": ""
+          }
+        },
+        "new_tab": {
+          "type": "Boolean",
+          "config": {
+            "label": "New Tab",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "label": {
+          "type": "Text",
+          "config": {
+            "label": "Label",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

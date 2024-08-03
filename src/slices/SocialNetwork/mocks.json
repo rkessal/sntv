@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"label": {
+				"__TYPE__": "FieldContent",
+				"value": "like",
+				"type": "Text"
+			},
+			"link": {
+				"__TYPE__": "FieldContent",
+				"value": "golden",
+				"type": "Text"
+			},
+			"number": {
+				"__TYPE__": "FieldContent",
+				"value": "other",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

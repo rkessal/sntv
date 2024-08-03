@@ -3,20 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "concurrently \"npm:next:dev\" \"npm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
+    "next:dev": "next dev",
+    "build": "rm -rf .next/cache/fetch-cache && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
+    "@prismicio/client": "^7.6.0",
+    "@prismicio/next": "^1.6.0",
+    "@prismicio/react": "^2.8.0",
+    "clsx": "^2.1.1",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.8",
+    "lodash": "^4.17.21",
+    "next": "14.2.5",
+    "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "split-type": "^0.3.4",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "@slicemachine/adapter-next": "^0.3.42",
+    "concurrently": "^8.2.2",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5"
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "slice-machine-ui": "^2.2.1",
+    "tailwindcss": "^3.4.1"
   }
 }

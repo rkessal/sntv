@@ -3,10 +3,20 @@ module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/slices/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
+      colors: {
+        secondary: '#E8D8C4',
+        primary: '#561C24',
+      },
+      fontFamily: {
+        'sans-serif': 'elza, sans-serif;',
+        serif: '"magari-variable", sans-serif'
+      }
+      ,
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

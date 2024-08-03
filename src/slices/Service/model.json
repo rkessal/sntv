@@ -1,0 +1,29 @@
+{
+  "id": "service",
+  "type": "SharedSlice",
+  "name": "Service",
+  "description": "Service",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "service": {
+          "type": "Link",
+          "config": {
+            "label": "Service",
+            "select": "document",
+            "customtypes": [
+              "service"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

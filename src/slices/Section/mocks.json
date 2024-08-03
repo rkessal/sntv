@@ -1,0 +1,173 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Veniam aliquip minim laborum esse et ut est nisi officia adipisicing ut culpa qui fugiat. Amet anim cillum ex nostrud voluptate labore incididunt reprehenderit nostrud nulla est. Aute ullamco incididunt fugiat anim Lorem magna sunt qui laborum et."
+						}
+					}
+				]
+			},
+			"sections": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"section",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"section_id": {
+				"__TYPE__": "FieldContent",
+				"value": "such",
+				"type": "Text"
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "contact",
+		"primary": {
+			"section_id": {
+				"__TYPE__": "FieldContent",
+				"value": "attached",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu aliqua voluptate adipisicing quis duis labore aliqua magna incididunt cupidatat amet."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "story",
+		"primary": {
+			"section_id": {
+				"__TYPE__": "FieldContent",
+				"value": "paper",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi commodo id officia excepteur excepteur mollit incididunt."
+						}
+					}
+				]
+			},
+			"sections": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Elit dolore tempor fugiat Lorem pariatur non aliquip occaecat. In mollit pariatur cupidatat reprehenderit ut ea laboris deserunt veniam fugiat ut veniam sit occaecat. Est esse elit velit veniam in ex consectetur aute proident culpa commodo quis do excepteur."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "services",
+		"primary": {
+			"section_id": {
+				"__TYPE__": "FieldContent",
+				"value": "wealth",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Elit labore sunt minim do amet sit dolore pariatur consequat deserunt sunt proident. Adipisicing enim anim enim do ad irure est labore amet ex tempor."
+						}
+					}
+				]
+			},
+			"sections": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"section",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

@@ -1,0 +1,40 @@
+{
+  "id": "social_network",
+  "type": "SharedSlice",
+  "name": "SocialNetwork",
+  "description": "SocialNetwork",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "label": {
+          "type": "Text",
+          "config": {
+            "label": "label",
+            "placeholder": ""
+          }
+        },
+        "link": {
+          "type": "Text",
+          "config": {
+            "label": "link",
+            "placeholder": ""
+          }
+        },
+        "number": {
+          "type": "Text",
+          "config": {
+            "label": "number",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

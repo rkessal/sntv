@@ -1,0 +1,23 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"link": {
+				"__TYPE__": "FieldContent",
+				"value": "native",
+				"type": "Text"
+			},
+			"new_tab": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"label": {
+				"__TYPE__": "FieldContent",
+				"value": "help",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
