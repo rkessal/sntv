@@ -1,11 +1,13 @@
+"use client"
 import useAnimateSectionTitle from '@/animations/useAnimateSectionTitle'
 import { PrismicRichText } from '@prismicio/react'
 import clsx from 'clsx'
-import React, { memo, useRef } from 'react'
+import { memo, useRef } from 'react'
 
 const SectionTitle = ({ slice, className }) => {
   const titleRef = useRef(null)
   useAnimateSectionTitle({ ref: titleRef })
+
   return (
     <PrismicRichText
       components={{

@@ -18,7 +18,7 @@ const SocialNetwork = ({ slice }) => {
           }
         </span>
       </PrismicNextLink>
-      <p>{slice.primary.number}</p>
+      <p className="font-medium leading-none text-[3.5rem]">{slice.primary.number}</p>
     </section>
   );
 };

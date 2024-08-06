@@ -82,8 +82,8 @@ export default async function Home({ searchParams }) {
           slices={home.data.hero.data.slices} 
           index={0}
         />
-        <div className="relative w-full mt-32 overflow-hidden">
-          <div className="flex flex-row w-full">
+        <div className="relative w-full px-4 mt-32 overflow-hidden md:px-16">
+          <div className="flex flex-row w-full ">
             {
               brands.data.slices.map(slice => (
                 <figure key={slice.id} className="h-[4.5rem] w-auto mr-32 shrink-0">

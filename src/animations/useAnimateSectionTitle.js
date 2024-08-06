@@ -20,15 +20,17 @@ const useAnimateSectionTitle = ({ ref }) => {
     })
 
     gsap.from(split.chars, {
-      scrollTrigger: ref.current,
-      delay: 0.5,
+      scrollTrigger: {
+        trigger: ref.current,
+        start: "top center",
+      },
       rotationZ: 7,
       duration: 1,
-      yPercent: 150,
+      yPercent: 140,
       ease: 'power4.out',
       stagger: 0.08,
     })
-  }, { scope: ref, dependencies: [ref.current]})
+  }, { dependencies: [ref.current]})
 }
 
 export default useAnimateSectionTitle

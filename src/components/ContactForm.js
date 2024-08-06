@@ -1,4 +1,5 @@
 "use client"
+import useAnimateContact from "@/animations/useAnimateContact";
 import { contact } from "@/app/actions/contact";
 import { useEffect, useRef } from "react";
 import { useFormState } from 'react-dom';
@@ -12,21 +13,23 @@ const ContactForm = () => {
     if (state?.code == 200) formRef.current.reset()
   }, [state])
 
+  useAnimateContact({ container: formRef })
+
   return (
     <form ref={formRef} action={formAction} className="px-4 md:px-16">
       <div className="mb-[2rem] flex flex-col">
-        <label className="text-[1.5rem] md:text-[1rem]" htmlFor="name">Nom</label>
-        <input className="text-[2rem] md:text-[1.125rem] pt-2 pb-1 bg-transparent border-b-2 outline-none border-b-primary" type="text" id="name" name="name" />
+        <label className="contact-label text-[1.5rem] md:text-[1rem]" htmlFor="name">Nom</label>
+        <input className="contact-input text-[2rem] md:text-[1.125rem] pt-2 pb-1 bg-transparent border-b-2 outline-none border-b-primary" type="text" id="name" name="name" />
         <span className="md:text-[0.8rem]">{state?.formatError?.name?.map((e) => e)}</span>
       </div>
       <div className="mb-[2rem] flex flex-col">
-        <label className="text-[1.5rem] md:text-[1rem]" htmlFor="email">Email</label>
-        <input className="text-[2rem] md:text-[1.125rem] pt-2 pb-1 bg-transparent border-b-2 outline-none border-b-primary" type="text" id="email" name="email" />
+        <label className="contact-label text-[1.5rem] md:text-[1rem]" htmlFor="email">Email</label>
+        <input className="contact-input text-[2rem] md:text-[1.125rem] pt-2 pb-1 bg-transparent border-b-2 outline-none border-b-primary" type="text" id="email" name="email" />
         <span className="md:text-[0.8rem]">{state?.formatError?.email?.map((e) => e)}</span>
       </div>
       <div className="mb-[2rem] flex flex-col">
-        <label className="text-[1.5rem] md:text-[1rem]" htmlFor="message">Message</label>
-        <textarea rows={4} type="text" id="message" name="message" className="min-h-28 max-h-72 text-[2rem] md:text-[1.125rem] pt-2 pb-1 bg-transparent border-b-2 outline-none border-b-primary" />
+        <label className="contact-label text-[1.5rem] md:text-[1rem]" htmlFor="message">Message</label>
+        <textarea rows={4} type="text" id="message" name="message" className="contact-input min-h-28 max-h-72 text-[2rem] md:text-[1.125rem] pt-2 pb-1 bg-transparent border-b-2 outline-none border-b-primary" />
         <span className="md:text-[0.8rem]">{state?.formatError?.message?.map((e) => e)}</span>
       </div>
       <Submit state={state} />

@@ -43,7 +43,7 @@ const useAnimateAbout = ({ container }) => {
         scale: 0.98,
         scrollTrigger: {
           trigger: paragraph,
-          scrub: 1,
+          scrub: true
         }
       })
     })

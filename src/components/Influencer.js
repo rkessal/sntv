@@ -17,7 +17,7 @@ const Influencer = ({influencer}) => {
 
   return (
     <article
-      className='mr-20'
+      className='w-auto mr-20' 
       onClick={(e) => handleClick(e)} 
     >
       {
