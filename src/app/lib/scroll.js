@@ -3,7 +3,7 @@ function disableScroll()  {
 }
 
 function enableScroll() {
-  document.body.classList.add('overflow-y-hidden')
+  document.body.classList.remove('overflow-y-hidden')
 }
 
 export { disableScroll, enableScroll }
