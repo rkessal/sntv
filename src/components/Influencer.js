@@ -17,13 +17,13 @@ const Influencer = ({influencer}) => {
 
   return (
     <article
-      className='w-auto mr-20' 
+      className='w-full mr-20' 
       onClick={(e) => handleClick(e)} 
     >
       {
         isFilled.image(influencer.data.image) 
           && (
-            <figure className="md:w-[23.75rem] h-[32rem] relative texture-overlay color-overlay">
+            <figure className="w-[23.75rem] h-[32rem] relative texture-overlay color-overlay">
               <PrismicNextImage alt='' className="object-cover w-full h-full pointer-events-none " field={influencer.data.image} />
             </figure>
           )

@@ -35,10 +35,6 @@ const Services = ({slice}) => {
     }, '<')
   }, {scope: refContainer, dependencies: [ currentService ]})
 
-  useEffect(() => {
-    
-  }, [currentService])
-
   return (
     <div ref={refContainer}>
       <SectionTitle slice={slice} className='px-4 md:px-16' />
@@ -55,7 +51,7 @@ const Services = ({slice}) => {
           />
         ))
       }
-      <div className="h-[0.375rem] w-full bg-primary mb-4"></div>
+      <div className="h-[0.25rem] w-full bg-primary mb-4"></div>
     </div>
   )
  
@@ -102,27 +98,31 @@ const Service = ({
         "h-[5rem] overflow-hidden service", 
         currentService === uid && 'active'
       )}>
-        <div className="h-[0.375rem] w-full bg-primary"></div>
+        <div className="h-[0.25rem] w-full bg-primary"></div>
         <div className="px-4 md:px-16">
-          <h1 onClick={(e) => handleLinkClick(e)} className="hover:cursor-pointer md:-mt-4 text-[3rem] md:text-[8.0625rem] font-black italic mb-8 md:mb-16 uppercase">{slice.data.title}</h1>
+          <h1 onClick={(e) => handleLinkClick(e)} className="hover:cursor-pointer mt-2 md:-mt-4 text-[3rem] md:text-[8.0625rem] font-black italic mb-8 md:mb-16 uppercase">{slice.data.title}</h1>
           <div className="flex flex-col mb-8 md:flex-row">
-            <div className="flex flex-col w-full md:max-w-[41.625rem] pr-[1.125rem]">
-              <PrismicRichText components={{
-                paragraph: ({children}) => <p data-animate-paragraph className="text-[2rem] md:text-[1.125rem] mb-4">{children}</p>
-              }} field={slice.data.description} />
-              <PrismicRichText components={{
-                paragraph: ({children}) => <p data-animate-paragraph className="text-[2rem] md:text-[1.125rem]">{children}</p>
-              }}
-              field={slice.data.benefit} />
-            </div>
             {
               isFilled.image(slice.data.image) 
                 && (
-                  <figure className="md:w-[40.375rem] mt-8 md:mt-0 h-[21.375rem]">
-                    <PrismicNextImage alt="" className="object-cover w-full h-full" field={slice.data.image} />
-                  </figure>
+                  <div className='md:w-[41.625rem] md:mt-0 h-[27rem]'>
+                    <figure className="relative w-full h-full color-overlay texture-overlay ">
+                      <PrismicNextImage alt="" className="object-cover w-full h-full" field={slice.data.image} />
+                    </figure>
+                  </div>
                 )
             }
+            <div className="flex flex-col w-full md:max-w-[33.3125rem] mt-16 md:mt-0 md:ml-[7.0625rem]">
+              <PrismicRichText components={{
+                heading1: ({children}) => <h1 className="text-[2rem] font-bold italic mb-4">{children}</h1>,
+                paragraph: ({children}) => <p className="text-[2rem] md:text-[1.125rem] mb-8">{children}</p>
+              }} field={slice.data.description} />
+              <PrismicRichText components={{
+                heading1: ({children}) => <h1 className="text-[2rem] font-bold italic mb-4">{children}</h1>,
+                paragraph: ({children}) => <p className="text-[2rem] md:text-[1.125rem]">{children}</p>
+              }}
+              field={slice.data.benefit} />
+            </div>
           </div>
       </div>
       </article>

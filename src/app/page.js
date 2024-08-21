@@ -39,14 +39,33 @@ export default async function Home({ searchParams }) {
       'hero.subtitle',
       'hero.slices',
       'hero.brands',
-      'service.title',
-      'service.description',
-      'service.benefit',
-      'service.image',
       'influencer.name',
       'influencer.image',
+      'influencer.description',
+      'influencer.slices',
       'marquee.slices',
-    ]
+    ],
+    graphQuery: `{
+      accueil {
+        hero
+        slices {
+          ...on section {
+            variation {
+              ...on services {
+                primary {
+                  ...primaryFields
+                  sections {
+                    section {
+                      ...sectionFields
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }`
   });
 
   const { brands } = home.data.hero.data
@@ -55,13 +74,13 @@ export default async function Home({ searchParams }) {
     <main>
       <Setup />
       <Navbar navigation={navigation} />
-      <section id="back-to-top" className="flex flex-col items-center justify-center w-full h-[80vh] md:h-auto md:pt-[8rem]">
+      <section id="back-to-top" className="flex flex-col px-4 md:px-16 items-center justify-center w-full h-[80vh] md:h-auto md:pt-[8rem]">
         <PrismicRichText 
           components={{
             paragraph: ({children}) => 
-              <p 
-                className="font-serif mb-[1.25rem] text-[6rem] md:leading-[21.125rem] font-medium md:text-[24.8125rem] text-primary uppercase md:max-w-[80rem] w-full text-center"
-              >
+            <p 
+              className="font-serif mb-[1.25rem] mt-64 md:mt-0 leading-[11rem] text-[14rem] md:leading-[21.125rem] font-medium md:text-[24.8125rem] text-primary uppercase max-w-[45rem] md:max-w-[80rem] w-full text-center"
+            >
                   {children}
               </p>
           }} 

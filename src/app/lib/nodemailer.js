@@ -31,7 +31,7 @@ async function sendMail({ name, email, message }) {
     `,
     html: `<p>Message de ${name}</p>
     <p>${message}</p>
-    <p>Contact  ${email}</p>`
+    <p>Contact : ${email}</p>`
   })
 }
 

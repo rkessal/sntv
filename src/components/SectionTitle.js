@@ -15,7 +15,7 @@ const SectionTitle = ({ slice, className }) => {
           <p 
             ref={titleRef} 
             className={clsx(
-              'mb-8 uppercase font-serif tracking-tight md:leading-[14.125rem] md:text-[24.8125rem]',
+              'mb-8 uppercase font-serif tracking-tight leading-[10rem] md:leading-[14.125rem] text-[14rem] md:text-[24.8125rem]',
               className
             )}
           >
