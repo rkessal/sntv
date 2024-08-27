@@ -6,7 +6,7 @@ import { PrismicNextImage } from '@prismicio/next'
 import { PrismicRichText } from '@prismicio/react'
 import clsx from 'clsx'
 import { useSearchParams } from 'next/navigation'
-import { useEffect, useRef } from 'react'
+import { memo, useEffect, useRef } from 'react'
 import SectionTitle from './SectionTitle'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -15,10 +15,6 @@ const Services = ({slice}) => {
   const refContainer = useRef(null)
   const currentService = searchParams.get('service')
   const firstServiceRef = useRef(null)
-
-  const setFirstService = (ref) => {
-    firstServiceRef.current = ref.current
-  }
 
   const { contextSafe } = useGSAP(() => {
     const tl = gsap.timeline()
@@ -45,7 +41,6 @@ const Services = ({slice}) => {
             index={index} 
             slice={s.section} 
             currentService={currentService} 
-            setFirstService={setFirstService} 
             firstServiceRef={firstServiceRef} 
             contextSafe={contextSafe}
           />
@@ -57,11 +52,10 @@ const Services = ({slice}) => {
  
 }
 
-const Service = ({
+const Service = memo(({
   slice, 
   currentService,
   index, 
-  setFirstService, 
   firstServiceRef,
   contextSafe
 }) => {
@@ -69,8 +63,8 @@ const Service = ({
   const ref = useRef(null)
 
   useEffect(() => {
-    if (index === 0) setFirstService(ref)
-  }, [index, setFirstService])
+    if (index === 0) firstServiceRef.current = ref.current
+  }, [index, firstServiceRef])
   
   const handleLinkClick = contextSafe((e) => {
     e.preventDefault();
@@ -96,7 +90,7 @@ const Service = ({
   return (
       <article ref={ref} className={clsx(
         "h-[5rem] overflow-hidden service", 
-        currentService === uid && 'active'
+        ((!currentService && index === 0) || currentService === uid) && 'active',
       )}>
         <div className="h-[0.25rem] w-full bg-primary"></div>
         <div className="px-4 md:px-16">
@@ -127,6 +121,7 @@ const Service = ({
       </div>
       </article>
   )
-}
+})
 
+Service.displayName = 'Service'
 export default Services
