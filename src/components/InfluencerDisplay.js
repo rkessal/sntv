@@ -233,4 +233,5 @@ const InfluencerDisplay = forwardRef(({ influencers }, imageRef) => {
   );
 });
 
+InfluencerDisplay.displayName = "InfluencerDisplay";
 export default InfluencerDisplay;
