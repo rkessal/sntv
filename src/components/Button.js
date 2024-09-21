@@ -2,7 +2,7 @@ import { PrismicNextLink } from '@prismicio/next'
 import clsx from 'clsx'
 import React from 'react'
 
-const Button = ({ ref, label, link, onClick, variant, size, className }) => {
+const Button = ({ ref, label, link, onClick, variant, size, className, ...props }) => {
   const classNameWrapper = clsx(
     'rounded-full  uppercase border-[1px]',
     variant === 'primary' && 'bg-primary text-secondary border-secondary',
@@ -14,7 +14,7 @@ const Button = ({ ref, label, link, onClick, variant, size, className }) => {
 
   if (onClick) {
     return (
-      <button ref={ref} onClick={onClick} className={classNameWrapper} >
+      <button ref={ref} onClick={onClick} className={classNameWrapper} {...props} >
         <span className={classNameChild}>
           {label}
         </span>
