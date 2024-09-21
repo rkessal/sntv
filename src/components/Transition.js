@@ -18,7 +18,7 @@ const Transition = ({ setClone, clone, canvasOffset, image }) => {
       enableScroll();
       setClone(null);
     }
-  }, [params]);
+  }, [params, setClone]);
 
   useGSAP(
     () => {

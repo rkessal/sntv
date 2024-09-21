@@ -176,5 +176,5 @@ const Scene = forwardRef(
   },
 );
 
-Scene.displayName = 'Scene'
+Scene.displayName = "Scene";
 export default Scene;
