@@ -13,7 +13,7 @@ const Influencer = forwardRef(({ influencer, onClick }, ref) => {
 
   return (
     <article
-      className="w-full mr-20"
+      className="w-full mr-20 hover:cursor-pointer"
       onClick={(e) => onClick(e, uid)}
       ref={influencerRef}
     >

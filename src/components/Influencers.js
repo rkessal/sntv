@@ -59,7 +59,7 @@ const Influencers = ({ slice }) => {
       >
         {!isMobile && (
           <div className="absolute top-0 left-0 z-50 w-screen h-screen pointer-events-none md:block hidden">
-            <Canvas>
+            <Canvas className="hover:cursor-grab">
               <Scene
                 clone={clone}
                 setCanvasOffset={setCanvasOffset}

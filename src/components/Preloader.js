@@ -31,7 +31,7 @@ const Preloader = () => {
     };
 
     fetchLottieData();
-  }, []);
+  }, [isMobile]);
 
   const onComplete = () => {
     enableScroll();
@@ -58,12 +58,11 @@ const Preloader = () => {
   );
 
   return (
-    !isMobile &&
     !destroy && (
       <div
         data-lenis-prevent
         ref={containerRef}
-        className="text-secondary h-screen w-screen bg-primary flex justify-center items-center z-[99] fixed top-0 left-0"
+        className="hidden md:flex text-secondary h-screen w-screen bg-primary justify-center items-center z-[99] fixed top-0 left-0"
       >
         <div className="w-[60vw] h-full flex flex-col items-center">
           <div className="relative w-full h-full">
