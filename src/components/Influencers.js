@@ -7,6 +7,7 @@ import Scene from "./Scene";
 import SectionTitle from "./SectionTitle";
 import Transition from "./Transition";
 import { LoadingProvider } from "@/app/store/loading-scene";
+import useDevice from "@/hooks/useDevice";
 
 const Influencers = ({ slice }) => {
   const wrapper = useRef(null);
@@ -14,6 +15,7 @@ const Influencers = ({ slice }) => {
   const $imageRef = useRef(null);
   const image = useRef({ position: [], scale: [] });
   const $transitionWrapper = useRef();
+  const { isMobile } = useDevice();
 
   const [clone, setClone] = useState(null);
   const [canvasOffset, setCanvasOffset] = useState(null);
@@ -55,19 +57,24 @@ const Influencers = ({ slice }) => {
         className="relative w-full overflow-x-hidden influencer-list-container"
         ref={container}
       >
-        <div className="absolute top-0 left-0 z-50 w-screen h-screen pointer-events-none">
-          <Canvas>
-            <Scene
-              clone={clone}
-              setCanvasOffset={setCanvasOffset}
-              image={image}
-              setClone={setClone}
-              imageRef={$imageRef}
-              ref={wrapper}
-            />
-          </Canvas>
-        </div>
-        <div ref={wrapper} className="relative z-40 inline-flex sm:flex-row">
+        {!isMobile && (
+          <div className="absolute top-0 left-0 z-50 w-screen h-screen pointer-events-none md:block hidden">
+            <Canvas>
+              <Scene
+                clone={clone}
+                setCanvasOffset={setCanvasOffset}
+                image={image}
+                setClone={setClone}
+                imageRef={$imageRef}
+                ref={wrapper}
+              />
+            </Canvas>
+          </div>
+        )}
+        <div
+          ref={wrapper}
+          className="relative z-40 w-full overflow-x-scroll md:w-auto md:overflow-x-hidden inline-flex sm:flex-row"
+        >
           {influencers.map(({ section }, index) => (
             <Influencer
               onClick={onClickHandler}

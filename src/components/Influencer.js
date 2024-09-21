@@ -21,7 +21,7 @@ const Influencer = forwardRef(({ influencer, onClick }, ref) => {
         <figure
           data-influencer={uid}
           data-img-src={influencer.data.image.url}
-          className="opacity-0 z-10 w-[23.75rem] h-[32rem] relative texture-overlay color-overlay"
+          className="md:opacity-0 z-10 w-[23.75rem] h-[32rem] relative texture-overlay color-overlay"
         >
           <PrismicNextImage
             alt=""

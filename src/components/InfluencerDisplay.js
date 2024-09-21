@@ -10,12 +10,14 @@ import { disableScroll, enableScroll } from "@/app/lib/scroll";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import clsx from "clsx";
+import useDevice from "@/hooks/useDevice";
 
 const InfluencerDisplay = forwardRef(({ influencers }, imageRef) => {
   const [influencer, setInfluencer] = useState(null);
   const searchParams = useSearchParams();
   const influencerParam = searchParams.get("influencer");
   const influencerImage = useRef(null);
+  const { isMobile } = useDevice();
 
   const [loading, setLoading] = useState(false);
   const [hasOpened, setHasOpened] = useState(false);
@@ -25,14 +27,13 @@ const InfluencerDisplay = forwardRef(({ influencers }, imageRef) => {
 
   const { contextSafe } = useGSAP(
     () => {
-      console.log(hasOpened);
       if (!influencerParam)
         return () => {
           gsap.set(".influencer__wrapper", {
             autoAlpha: 1,
           });
         };
-      if (hasOpened) return;
+      if (hasOpened || isMobile) return;
       const tl = gsap.timeline({
         delay: 0.2,
       });
@@ -53,6 +54,10 @@ const InfluencerDisplay = forwardRef(({ influencers }, imageRef) => {
 
   const closeAnimation = contextSafe(() => {
     return new Promise((resolve) => {
+      if (isMobile) {
+        resolve();
+        return;
+      }
       const tl = gsap.timeline();
       tl.to(".influencer__container", {
         scrollTo: {
@@ -102,6 +107,11 @@ const InfluencerDisplay = forwardRef(({ influencers }, imageRef) => {
   const transition = contextSafe((target, dir) => {
     setLoading(true);
     return new Promise((resolve) => {
+      if (isMobile) {
+        setLoading(false);
+        resolve();
+        return;
+      }
       gsap.to(".influencer__info", {
         autoAlpha: 0,
         duration: 1,
