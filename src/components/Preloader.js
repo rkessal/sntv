@@ -22,7 +22,10 @@ const Preloader = () => {
   const lottieRef = useRef(null);
 
   useEffect(() => {
-    if (isMobile) return;
+    if (isMobile) {
+      enableScroll();
+      return;
+    }
     disableScroll();
     const fetchLottieData = async () => {
       const response = await fetch("/lottie/sntv-logo.json");
