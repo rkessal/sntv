@@ -73,7 +73,7 @@ const Influencers = ({ slice }) => {
         )}
         <div
           ref={wrapper}
-          className="relative z-40 w-full overflow-x-scroll md:w-auto md:overflow-x-hidden inline-flex sm:flex-row"
+          className="relative pl-8 z-40 w-full overflow-x-scroll md:w-auto md:overflow-x-hidden inline-flex sm:flex-row"
         >
           {influencers.map(({ section }, index) => (
             <Influencer
