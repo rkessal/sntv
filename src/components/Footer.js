@@ -10,7 +10,7 @@ const Footer = ({ footer }) => {
           <figure className="w-[15.375rem] h-[6.125rem] mb-16">
             <PrismicNextImage
               className="w-full h-full object-cover"
-              alt={footer.data.logo.alt}
+              alt=""
               field={footer.data.logo}
             />
           </figure>
