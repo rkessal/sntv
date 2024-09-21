@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 const useDevice = () => {
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState();
 
   useEffect(() => {
     const handleResize = () => {

@@ -64,6 +64,8 @@ const Scene = forwardRef(
     const onPointerDown = (e) => {
       isDown.current = true;
       x.current.start = e.clientX;
+      const canvas = gl.domElement;
+      canvas.classList.add("cursor-grabbing");
 
       if (momentum.current) {
         momentum.current = null;
@@ -99,6 +101,8 @@ const Scene = forwardRef(
 
     const onPointerUp = () => {
       isDown.current = false;
+      const canvas = gl.domElement;
+      canvas.classList.remove("cursor-grabbing");
 
       momentum.current = { velocity: x.current.velocity };
     };

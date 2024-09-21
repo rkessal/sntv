@@ -59,7 +59,7 @@ const Influencers = ({ slice }) => {
       >
         {!isMobile && (
           <div className="absolute top-0 left-0 z-50 w-screen h-screen pointer-events-none md:block hidden">
-            <Canvas>
+            <Canvas className="hover:cursor-grab">
               <Scene
                 clone={clone}
                 setCanvasOffset={setCanvasOffset}
@@ -73,7 +73,7 @@ const Influencers = ({ slice }) => {
         )}
         <div
           ref={wrapper}
-          className="relative z-40 w-full overflow-x-scroll md:w-auto md:overflow-x-hidden inline-flex sm:flex-row"
+          className="relative pl-8 z-40 w-full overflow-x-scroll md:w-auto md:overflow-x-hidden inline-flex sm:flex-row"
         >
           {influencers.map(({ section }, index) => (
             <Influencer
