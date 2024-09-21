@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { disableScroll, enableScroll } from "@/app/lib/scroll";
 import dynamic from "next/dynamic";
+import useDevice from "@/hooks/useDevice";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -14,6 +15,7 @@ const Preloader = () => {
   const [animationData, setAnimationData] = useState(null);
   const [complete, setComplete] = useState(false);
   const [destroy, setDestroy] = useState(false);
+  const { isMobile } = useDevice();
   const { currentProgress } = state;
 
   const containerRef = useRef(null);
@@ -37,6 +39,7 @@ const Preloader = () => {
 
   useGSAP(
     () => {
+      if (isMobile) return;
       if (complete) {
         gsap.set(containerRef.current, {
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -50,10 +53,11 @@ const Preloader = () => {
         });
       }
     },
-    { dependencies: [complete, currentProgress, lottieRef.current] },
+    { dependencies: [isMobile, complete, currentProgress, lottieRef.current] },
   );
 
   return (
+    !isMobile &&
     !destroy && (
       <div
         data-lenis-prevent

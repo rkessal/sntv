@@ -3,7 +3,6 @@ function disableScroll() {
 }
 
 function enableScroll() {
-  console.log("enable");
   document.body.classList.remove("overflow-y-hidden");
 }
 

@@ -7,7 +7,7 @@ const Footer = ({ footer }) => {
     <footer className="text-[2rem] md:text-[1.125rem] text-secondary bg-primary min-h-[20rem] md:px-16 px-4 w-full py-16 mt-32 flex flex-col">
       <div className="flex flex-col w-full text-center md:flex-row md:text-start">
         <div className="mb-16 md:w-[45.625rem]">
-          <figure className="w-[15.375rem] h-[6.125rem] mb-16">
+          <figure className="w-[15.375rem] h-[6.125rem] mb-16 md:mx-0 mx-auto">
             <PrismicNextImage
               className="w-full h-full object-cover"
               alt=""
