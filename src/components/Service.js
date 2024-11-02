@@ -102,7 +102,7 @@ const Service = memo(
         <div className="px-4 md:px-16">
           <h1
             onClick={(e) => handleLinkClick(e)}
-            className="hover:cursor-pointer mt-2 md:-mt-4 text-[3rem] md:text-[8.0625rem] font-black italic mb-8 md:mb-16 uppercase"
+            className="hover:cursor-pointer leading-[0.8] md:mt-[3rem] mt-6 text-[3rem] md:text-[8.0625rem] font-black italic mb-8 md:mb-16 uppercase"
           >
             {slice.data.title}
           </h1>
