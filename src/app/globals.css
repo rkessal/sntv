@@ -34,6 +34,7 @@ html {
   font-size: calc((100vw / 1440) * 16);
   box-sizing: border-box;
   font-variation-settings: "wght" 500;
+  @apply font-sans-serif bg-secondary text-primary;
 }
 
 .preloader__loading_text {

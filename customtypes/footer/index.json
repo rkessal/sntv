@@ -28,6 +28,13 @@
           "select": "document",
           "customtypes": ["navigation"]
         }
+      },
+      "confidentialite": {
+        "type": "Text",
+        "config": {
+          "label": "Confidentialite",
+          "placeholder": ""
+        }
       }
     }
   }

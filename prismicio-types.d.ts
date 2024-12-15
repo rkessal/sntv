@@ -85,6 +85,71 @@ export type AccueilDocument<Lang extends string = string> =
     Lang
   >;
 
+type ConfidentialiteDocumentDataSlicesSlice = SectionSlice;
+
+/**
+ * Content for Confidentialité documents
+ */
+interface ConfidentialiteDocumentData {
+  /**
+   * Slice Zone field in *Confidentialité*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: confidentialite.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ConfidentialiteDocumentDataSlicesSlice> /**
+   * Meta Title field in *Confidentialité*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: confidentialite.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Confidentialité*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: confidentialite.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Confidentialité*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: confidentialite.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Confidentialité document from Prismic
+ *
+ * - **API ID**: `confidentialite`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ConfidentialiteDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ConfidentialiteDocumentData>,
+    "confidentialite",
+    Lang
+  >;
+
 /**
  * Content for Footer documents
  */
@@ -121,6 +186,17 @@ interface FooterDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   navigation: prismic.ContentRelationshipField<"navigation">;
+
+  /**
+   * Confidentialite field in *Footer*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.confidentialite
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  confidentialite: prismic.KeyTextField;
 }
 
 /**
@@ -437,6 +513,7 @@ export type ServiceDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | AccueilDocument
+  | ConfidentialiteDocument
   | FooterDocument
   | HeroDocument
   | InfluencerDocument
@@ -685,6 +762,31 @@ export interface SectionSliceServicesPrimarySectionsItem {
 }
 
 /**
+ * Item in *Section → Confidentialite → Primary → Sections*
+ */
+export interface SectionSliceConfidentialitePrimarySectionsItem {
+  /**
+   * Title field in *Section → Confidentialite → Primary → Sections*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section.confidentialite.primary.sections[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Section → Confidentialite → Primary → Sections*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section.confidentialite.primary.sections[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
  * Primary content in *Section → influencers → Primary*
  */
 export interface SectionSliceDefaultPrimary {
@@ -871,13 +973,74 @@ export type SectionSliceServices = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Section → Confidentialite → Primary*
+ */
+export interface SectionSliceConfidentialitePrimary {
+  /**
+   * Section id field in *Section → Confidentialite → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section.confidentialite.primary.section_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  section_id: prismic.KeyTextField;
+
+  /**
+   * Title field in *Section → Confidentialite → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section.confidentialite.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *Section → Confidentialite → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section.confidentialite.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Sections field in *Section → Confidentialite → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section.confidentialite.primary.sections[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  sections: prismic.GroupField<
+    Simplify<SectionSliceConfidentialitePrimarySectionsItem>
+  >;
+}
+
+/**
+ * Confidentialite variation for Section Slice
+ *
+ * - **API ID**: `confidentialite`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SectionSliceConfidentialite = prismic.SharedSliceVariation<
+  "confidentialite",
+  Simplify<SectionSliceConfidentialitePrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Section*
  */
 type SectionSliceVariation =
   | SectionSliceDefault
   | SectionSliceContact
   | SectionSliceStory
-  | SectionSliceServices;
+  | SectionSliceServices
+  | SectionSliceConfidentialite;
 
 /**
  * Section Shared Slice
@@ -1056,6 +1219,9 @@ declare module "@prismicio/client" {
       AccueilDocument,
       AccueilDocumentData,
       AccueilDocumentDataSlicesSlice,
+      ConfidentialiteDocument,
+      ConfidentialiteDocumentData,
+      ConfidentialiteDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       HeroDocument,
@@ -1099,11 +1265,14 @@ declare module "@prismicio/client" {
       SectionSliceStoryPrimary,
       SectionSliceServicesPrimarySectionsItem,
       SectionSliceServicesPrimary,
+      SectionSliceConfidentialitePrimarySectionsItem,
+      SectionSliceConfidentialitePrimary,
       SectionSliceVariation,
       SectionSliceDefault,
       SectionSliceContact,
       SectionSliceStory,
       SectionSliceServices,
+      SectionSliceConfidentialite,
       ServiceSlice,
       ServiceSliceDefaultPrimary,
       ServiceSliceVariation,

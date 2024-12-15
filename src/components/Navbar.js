@@ -4,10 +4,14 @@ import React, { useRef, useState } from "react";
 import Button from "./Button";
 import clsx from "clsx";
 import useAnimateMenu from "@/animations/useAnimateMenu";
+import { usePathname } from "next/navigation";
 
 const Navbar = ({ navigation }) => {
   const { slices, slices1 } = navigation.data;
   const [menu, toggleMenu] = useState(false);
+  const pathname = usePathname()
+
+  const confidentialite = pathname === '/confidentialite'
 
   const container = useRef(null);
 
@@ -28,12 +32,21 @@ const Navbar = ({ navigation }) => {
   return (
     <div ref={container}>
       <nav className="fixed top-0 z-[55] flex flex-row justify-between w-full px-4 mt-4 md:px-16">
-        <Button
-          size="small"
-          onClick={onMenuClick}
-          label="menu"
-          variant="secondary"
-        />
+        {
+          confidentialite
+            ? <Button 
+                link='/'
+                size="small"
+                label="accueil"
+                variant="secondary"
+              />
+            : (<Button
+                size="small"
+                onClick={onMenuClick}
+                label="menu"
+                variant="secondary"
+            />)
+        }
         <Button
           size="small"
           link="/#contact"

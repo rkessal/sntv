@@ -169,5 +169,82 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "confidentialite",
+		"primary": {
+			"section_id": {
+				"__TYPE__": "FieldContent",
+				"value": "pound",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Culpa id Lorem dolore occaecat incididunt adipisicing adipisicing culpa quis."
+						}
+					}
+				]
+			},
+			"sections": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "In laboris elit magna dolore et pariatur elit aute do. Laboris nulla nostrud adipisicing Lorem minim enim nisi. Ad ad qui mollit sit aute velit officia incididunt pariatur commodo veniam commodo ullamco proident sit."
+											}
+										}
+									]
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Amet ipsum excepteur id velit non."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sunt laborum excepteur qui nulla nisi nostrud consectetur reprehenderit laboris culpa excepteur. Ullamco consectetur occaecat ad qui in Lorem aliqua velit deserunt Lorem."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

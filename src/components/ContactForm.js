@@ -32,6 +32,7 @@ const ContactForm = () => {
         <textarea rows={4} type="text" id="message" name="message" className="contact-input min-h-28 max-h-72 text-[2rem] md:text-[1.125rem] pt-2 pb-1 bg-transparent border-b-2 outline-none border-b-primary" />
         <span className="md:text-[0.8rem]">{state?.formatError?.message?.map((e) => e)}</span>
       </div>
+      <div>{"En cliquant sur Envoyer, vous acceptez les conditions générales d'utilisation."}</div>
       <Submit state={state} />
     </form>
   );

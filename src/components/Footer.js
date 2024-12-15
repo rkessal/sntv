@@ -1,6 +1,7 @@
 import React from "react";
 import FooterNav from "./FooterNav";
 import { PrismicNextImage } from "@prismicio/next";
+import Link from "next/link";
 
 const Footer = ({ footer }) => {
   return (
@@ -9,12 +10,13 @@ const Footer = ({ footer }) => {
         <div className="mb-16 md:w-[45.625rem]">
           <figure className="w-[15.375rem] h-[6.125rem] mb-16 md:mx-0 mx-auto">
             <PrismicNextImage
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
               alt=""
               field={footer.data.logo}
             />
           </figure>
-          <span className="text-center md:mb-0">{footer.data.copyrights}</span>
+          <div>{footer.data.copyrights}</div>
+          <Link href={footer.data.confidentialite}>{"Conditions Générales d'Utilisation "}</Link>
         </div>
         <nav className="flex flex-col md:flex-row ">
           <FooterNav slices={footer.data.navigation.data.slices} />
